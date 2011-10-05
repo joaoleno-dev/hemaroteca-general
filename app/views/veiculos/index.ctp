@@ -48,10 +48,10 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Veiculo', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Tipo Veiculos', true), array('controller' => 'tipo_veiculos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tipo Veiculo', true), array('controller' => 'tipo_veiculos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Publicacaos', true), array('controller' => 'publicacaos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Publicacao', true), array('controller' => 'publicacaos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Novo Veiculo', true), array('controller' => 'veiculos','action' => 'add'));?></li>
+		<li><?php echo $this->Html->link(__('Tipos de veiculos', true), array('controller' => 'tipo_veiculos','action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('Veiculos', true), array('controller' => 'veiculos','action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('Publicações', true), array('controller' => 'publicacaos','action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('Arquivos', true), array('controller' => 'arquivos','action' => 'index'));?></li>
 	</ul>
 </div>
