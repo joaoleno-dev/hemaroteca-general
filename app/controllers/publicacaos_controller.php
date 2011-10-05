@@ -25,7 +25,7 @@ class PublicacaosController extends AppController {
 		$this->set('publicacao', $this->Publicacao->read(null, $id));
 	}
 	
-	function cadaster() {
+	function add() {
 		if (!empty($this->data)) {
 			$upload_dir = "/var/www/hemaroteca/uploads/";
 			/*
@@ -82,7 +82,7 @@ class PublicacaosController extends AppController {
 		$this->set(compact('tipoVeiculos'));
 	}
 
-	function add() {
+	/*function add() {
 		if (!empty($this->data)) {
 			$this->Publicacao->create();
 			if ($this->Publicacao->save($this->data)) {
@@ -94,7 +94,7 @@ class PublicacaosController extends AppController {
 		}
 		$veiculos = $this->Publicacao->Veiculo->find('list');
 		$this->set(compact('veiculos'));
-	}
+	}*/
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
