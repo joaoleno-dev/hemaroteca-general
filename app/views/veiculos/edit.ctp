@@ -9,5 +9,19 @@
 		// echo $this->Form->input('data_cadastro');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit', true));?>
+	<div class="submit">
+			<?php 
+				echo $this->Form->end(array(
+					'label' => 'Salvar alterações',
+					'class' => 'button blue',
+					'div' => false
+				));
+			?>
+			<div class="cancel">
+						ou
+					<?php
+						echo $this->Html->link('Cancelar', $this->Html->url(array('controller' => 'veiculos', 'action' => 'index')));
+					?>
+			</div>
+	</div>
 </div>

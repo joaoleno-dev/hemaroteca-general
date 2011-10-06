@@ -1,5 +1,6 @@
 <div class="veiculos index">
 	<h2><?php __('Veiculos');?></h2>
+	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'veiculos','action' => 'add')); ?>">Novo Veiculo</a>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th style="width: 72%;"><?php echo $this->Paginator->sort('descricao');?></th>

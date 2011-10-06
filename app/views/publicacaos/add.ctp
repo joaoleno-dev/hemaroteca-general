@@ -23,7 +23,21 @@
 			<em style="cursor:pointer">Adicionar novo</em>
 		</span>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit', true));?>
+	<div class="submit">
+				<?php 
+					echo $this->Form->end(array(
+						'label' => 'Salvar',
+						'class' => 'button blue',
+						'div' => false
+					));
+				?>
+				<div class="cancel">
+					ou
+				<?php
+					echo $this->Html->link('Cancelar', $this->Html->url(array('controller' => 'publicacaos', 'action' => 'index')));
+				?>
+				</div>
+	</div><!-- div class="submit"> -->
 </div>
 <script>
 	$(document).ready(function(){

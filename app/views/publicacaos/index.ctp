@@ -1,5 +1,6 @@
 <div class="publicacaos index">
 	<h2><?php __('Publicacaos');?></h2>
+	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'publicacaos','action' => 'add')); ?>">Nova Publicação</a>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>

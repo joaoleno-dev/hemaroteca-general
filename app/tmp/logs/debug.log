@@ -17,3 +17,6 @@
 2011-10-04 23:54:43 Notice: Notice (8): Undefined offset: 2 in [/var/www/hemaroteca/app/controllers/publicacaos_controller.php, line 36]
 2011-10-04 23:54:43 Notice: Notice (8): Undefined offset: 2 in [/var/www/hemaroteca/app/controllers/publicacaos_controller.php, line 37]
 2011-10-04 23:54:43 Notice: Notice (8): Undefined offset: 2 in [/var/www/hemaroteca/app/controllers/publicacaos_controller.php, line 38]
+2011-10-06 02:32:17 Notice: Notice (8): session_start() [http://php.net/function.session-start]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/hemaroteca/cake/libs/cake_session.php, line 587]
+2011-10-06 17:42:11 Notice: Notice (8): session_start() [http://php.net/function.session-start]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/hemaroteca/cake/libs/cake_session.php, line 587]
+2011-10-06 18:22:03 Notice: Notice (8): session_start() [http://php.net/function.session-start]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/var/www/hemaroteca/cake/libs/cake_session.php, line 587]

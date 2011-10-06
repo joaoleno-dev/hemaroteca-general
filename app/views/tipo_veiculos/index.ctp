@@ -1,6 +1,7 @@
 <?php //phpinfo(); ?>
 <div class="tipoVeiculos index">
 	<h2><?php __('Tipo de Veiculos');?></h2>
+	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'tipo_veiculos','action' => 'add')); ?>">Novo Tipo de Veiculo</a>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<!-- <th><?php echo $this->Paginator->sort('id');?></th> -->

@@ -1,5 +1,9 @@
 /*CSS DOCUMENT*/
+/*
+verde-vonheld : #C5F409
+*/
 body {
+	background-color: #f7f7f7;
 	font-family: Arial, Verdana, sans-serif;
 	margin: 0 ;
 	padding: 0;
@@ -23,7 +27,8 @@ fieldset {
 	margin: 25px 0 25px 10px;
 }
 #menu {
-	background-color: #f7f7f7;
+	/*background-color: #f7f7f7;*/
+	background-color: white;
 	border: 1px solid #d6d6d6;
 	clear: both;
 	display: block;
@@ -36,7 +41,7 @@ fieldset {
 }
 #menu ul {
 	display: block;
-	margin: 15px 0 15px 5px;
+	margin: 15px 0 10px 5px;
 	overflow: hidden;
 	padding: 0;
 }
@@ -58,6 +63,7 @@ fieldset {
 	border-radius: 3px;
 }
 #content {
+	background-color: white;
 	border: 1px solid #D6D6D6;
 	display: block;
 	margin: 10px auto;
@@ -73,21 +79,49 @@ fieldset {
 	display: block;
 	overflow: hidden;
 }
+.index .button {
+	border-radius: 5px;
+	display: inline-block;
+	font: normal bold 14px Arial,Verdana,sans-serif;
+	margin: 10px 10px 0 10px;
+	padding: 10px;
+	text-decoration: none;
+	/*text-shadow: -1px 0 0 rgba(0, 0, 0, 0.7);*/
+}
+.green {
+	color: white;
+	background-color: #C5F409;
+	background-image: -moz-linear-gradient(top,#c5f409,#83a206);
+	border: 1px solid #4e6104;
+}
+.blue {
+	color: white;
+	background-color: #227BF5;
+	background-image: -moz-linear-gradient(top,#227BF5,#074dab);
+	border: 1px solid #042f6a;
+}
 .index h2,.form h2 {
 	background-color:  #266cff;
 	/*background-image: -moz-linear-gradient(top, #266cff, #002d8c);*/
 	color: white;
-	font: normal bold 22px Arial,Verdana,sans-serif;
+	font: normal bold 16px Arial,Verdana,sans-serif;
 	margin: 0;
 	padding: 10px 0 10px 10px;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
 }
 .index table {
+	clear: both;
 	display: block;
 	margin: 10px;
 }
+table {
+	border-collapse:collapse;
+}
+ th, td {
+	border: 1px solid #002d8c;
+}
 .index table tr th {
 	background-color: #266CFF;
-	border: 1px solid #002d8c;
 	font: normal bold 15px Arial,Verdana,sans-serif;
 	padding: 5px;
 }
@@ -129,7 +163,7 @@ fieldset {
 	border-left: none;
 	border-right: none;
 	border-bottom: none;
-	margin: 10px;
+	margin: 10px 10px 0 10px;
 	padding: 5px;
 }
 .form label {
@@ -155,13 +189,26 @@ fieldset {
 	width: 80%;
 }
 /*BOTAO SUBMIT*/
+.submit {
+	display: inline-block;
+	margin: 0 38%;
+	overflow: hidden;
+}
 .submit input {
-	 background-image: none;
-	 border-radius: 5px 5px 5px 5px;
+	float: left;
+}
+.submit input {
+	 border-radius: 0;
 	 display: block;
+	 font: normal bold 14px Arial, Verdana, sans-serif;
 	 height: 40px;
 	 margin: 0 auto 10px;
-	 width: 150px;
+	min-width: 100px;
+}
+.submit .cancel {
+	float: left;
+	font-size: 12px;
+	margin: 15px 0 0 5px;
 }
 /*CAMPOS DE DATA*/
 .date select {
@@ -176,6 +223,10 @@ fieldset {
 	display: block;
 	padding: 10px;
 }
+.radio input {
+	display: block;
+	float: left;
+}
 /*CAMPOS DE UPLOAD*/
 #files-div fieldset {
 	border-top: 1px solid black;
@@ -185,3 +236,25 @@ fieldset {
 	display: block;
 	padding: 10px;
 } 
+#files-div input[type="file"] {
+	display: block;
+	width: 100px;
+}
+#file-adder em {
+	color: #666666;
+	font-size: 12px;
+}
+#file-adder em:hover {
+	color: black;
+	text-decoration: underline;
+}
+/*FLASH MESSAGE*/
+#flashMessage {
+	background-color: #DEDEDE;
+	border: 1px solid black;
+	clear: both;
+	display: block;
+	margin: 10px;
+	padding: 5px;
+	text-align: center;
+}
