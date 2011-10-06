@@ -2,10 +2,8 @@
 	<h2><?php __('Veiculos');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('descricao');?></th>
-			<th><?php echo $this->Paginator->sort('data_cadastro');?></th>
-			<th><?php echo $this->Paginator->sort('tipo_veiculo_id');?></th>
+			<th style="width: 72%;"><?php echo $this->Paginator->sort('descricao');?></th>
+			<th style="width: 14%;"><?php echo $this->Paginator->sort('tipo_veiculo_id');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -17,10 +15,8 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $veiculo['Veiculo']['id']; ?>&nbsp;</td>
 		<td><?php echo $veiculo['Veiculo']['descricao']; ?>&nbsp;</td>
-		<td><?php echo $veiculo['Veiculo']['data_cadastro']; ?>&nbsp;</td>
-		<td>
+		<td align="center">
 			<?php echo $this->Html->link($veiculo['TipoVeiculo']['descricao'], array('controller' => 'tipo_veiculos', 'action' => 'view', $veiculo['TipoVeiculo']['id'])); ?>
 		</td>
 		<td class="actions">
@@ -44,14 +40,4 @@
  |
 		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
-</div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Novo Veiculo', true), array('controller' => 'veiculos','action' => 'add'));?></li>
-		<li><?php echo $this->Html->link(__('Tipos de veiculos', true), array('controller' => 'tipo_veiculos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Veiculos', true), array('controller' => 'veiculos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Publicações', true), array('controller' => 'publicacaos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Arquivos', true), array('controller' => 'arquivos','action' => 'index'));?></li>
-	</ul>
 </div>

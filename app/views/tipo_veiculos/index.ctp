@@ -1,10 +1,11 @@
+<?php //phpinfo(); ?>
 <div class="tipoVeiculos index">
-	<h2><?php __('Tipo Veiculos');?></h2>
+	<h2><?php __('Tipo de Veiculos');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('descricao');?></th>
-			<th><?php echo $this->Paginator->sort('data_cadastro');?></th>
+			<!-- <th><?php echo $this->Paginator->sort('id');?></th> -->
+			<th style="width: 86%"><?php echo $this->Paginator->sort('descricao');?></th>
+			<!-- <th><?php echo $this->Paginator->sort('data_cadastro');?></th> -->
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -16,9 +17,9 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $tipoVeiculo['TipoVeiculo']['id']; ?>&nbsp;</td>
+		<!-- <td><?php echo $tipoVeiculo['TipoVeiculo']['id']; ?>&nbsp;</td> -->
 		<td><?php echo $tipoVeiculo['TipoVeiculo']['descricao']; ?>&nbsp;</td>
-		<td><?php echo $tipoVeiculo['TipoVeiculo']['data_cadastro']; ?>&nbsp;</td>
+		<!-- <td><?php echo $tipoVeiculo['TipoVeiculo']['data_cadastro']; ?>&nbsp;</td> -->
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $tipoVeiculo['TipoVeiculo']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $tipoVeiculo['TipoVeiculo']['id'])); ?>
@@ -40,14 +41,4 @@
  |
 		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
-</div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Novo tipo de veiculo', true), array('controller' => 'tipo_veiculos','action' => 'add'));?></li>
-		<li><?php echo $this->Html->link(__('Tipos de veiculos', true), array('controller' => 'tipo_veiculos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Veiculos', true), array('controller' => 'veiculos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Publicações', true), array('controller' => 'publicacaos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Arquivos', true), array('controller' => 'arquivos','action' => 'index'));?></li>
-	</ul>
 </div>
