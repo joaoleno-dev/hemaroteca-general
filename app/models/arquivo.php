@@ -25,4 +25,10 @@ class Arquivo extends AppModel {
 			'order' => ''
 		)
 	);
+	
+	function beforeSave($options ) {
+		$this->data['Arquivo']['data_cadastro'] = date('Y-m-d H:i:s');
+		return true;
+	}
+	
 }

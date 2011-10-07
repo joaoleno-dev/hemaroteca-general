@@ -51,5 +51,10 @@ class Veiculo extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+	
+	function beforeSave($options ) {
+		$this->data['Veiculo']['data_cadastro'] = date('Y-m-d H:i:s');
+		return true;
+	}
 
 }
