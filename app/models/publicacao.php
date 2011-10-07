@@ -72,7 +72,9 @@ class Publicacao extends AppModel {
 	);
 	
 	function beforeSave($options ) {
-		$this->data['Publicacao']['data_cadastro'] = date('Y-m-d H:i:s');
+		if(!isset($this->data['Publicacao']['id'])) {
+			$this->data['Publicacao']['data_cadastro'] = date('Y-m-d H:i:s');
+		}
 		return true;
 	}
 

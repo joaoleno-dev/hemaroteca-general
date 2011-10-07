@@ -33,7 +33,9 @@ class TipoVeiculo extends AppModel {
 	);
 	
 	function beforeSave($options ) {
-		$this->data['TipoVeiculo']['data_cadastro'] = date('Y-m-d H:i:s');
+		if(!isset($this->data['TipoVeiculo']['id'])) {
+			$this->data['TipoVeiculo']['data_cadastro'] = date('Y-m-d H:i:s');
+		}
 		return true;
 	}
 
