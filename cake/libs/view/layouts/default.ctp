@@ -41,10 +41,10 @@
 		</div>
 		<div id="menu">
 			<ul>
-				<li><?php echo $this->Html->link(__('Tipo de veiculos',true),$this->Html->url(array('controller' => 'tipo_veiculos')));?></li>
-				<li><?php echo $this->Html->link(__('Veiculos',true),$this->Html->url(array('controller' => 'veiculos')));?></li>
-				<li><?php echo $this->Html->link(__('Publicações',true),$this->Html->url(array('controller' => 'publicacaos')));?></li>
-				<li><?php echo $this->Html->link(__('Arquivos',true),$this->Html->url(array('controller' => 'arquivos')));?></li>
+				<li><?php echo $this->Html->link(__('Tipo de veiculos',true),$this->Html->url(array('controller' => 'tipo_veiculos'),true));?></li>
+				<li><?php echo $this->Html->link(__('Veiculos',true),$this->Html->url(array('controller' => 'veiculos'),true));?></li>
+				<li><?php echo $this->Html->link(__('Publicações',true),$this->Html->url(array('controller' => 'publicacaos'),true));?></li>
+				<li><?php echo $this->Html->link(__('Arquivos',true),$this->Html->url(array('controller' => 'arquivos'),true));?></li>
 			</ul>
 		</div>
 		<div id="content">

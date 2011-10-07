@@ -3,9 +3,9 @@
 	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'veiculos','action' => 'add')); ?>">Novo Veiculo</a>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th style="width: 72%;"><?php echo $this->Paginator->sort('descricao');?></th>
-			<th style="width: 14%;"><?php echo $this->Paginator->sort('tipo_veiculo_id');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th style="width: 72%;"><?php echo $this->Paginator->sort('Descrição','descricao');?></th>
+			<th style="width: 14%;"><?php echo $this->Paginator->sort('Tipo de veiculo','tipo_veiculo_id');?></th>
+			<th class="actions"><?php __('Ações');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -18,7 +18,7 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $veiculo['Veiculo']['descricao']; ?>&nbsp;</td>
 		<td align="center">
-			<?php echo $this->Html->link($veiculo['TipoVeiculo']['descricao'], array('controller' => 'tipo_veiculos', 'action' => 'view', $veiculo['TipoVeiculo']['id'])); ?>
+			<?php echo $veiculo['TipoVeiculo']['descricao']; ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $veiculo['Veiculo']['id'])); ?>

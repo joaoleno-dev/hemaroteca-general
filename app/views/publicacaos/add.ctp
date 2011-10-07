@@ -4,13 +4,13 @@
 	<h2><?php __('Nova Publicacao'); ?></h2>
 	<fieldset>
 	<?php
-		echo $this->Form->input('tipo_veiculo_id');
-		echo $this->Form->input('veiculo_id');
-		echo $this->Form->input('titulo');
-		echo $this->Form->input('data_publicacao');
+		echo $this->Form->input('tipo_veiculo_id',array('label' => 'Tipo de veiculo'));
+		echo $this->Form->input('veiculo_id',array('label' => 'Veiculo de comunicação'));
+		echo $this->Form->input('titulo',array('label' => 'Título'));
+		echo $this->Form->input('data_publicacao',array('label' => 'Data da publicação'));
 		// echo $this->Form->input('data_cadastro');
-		echo $this->Form->input('informacao');
-		echo $this->Form->input('resumo');
+		echo $this->Form->input('informacao',array('label' => 'Informação'));
+		echo $this->Form->input('resumo',array('label' => 'Resumo'));
 		echo $this->Form->input('palavra_chave',array('type' => 'text','label' => 'Palavras-chaves <small>Separe por virgulas</small>'));
 		echo $this->Form->input('avaliacao',array('type' => 'radio','options' => array('Negativa','Positiva')));
 	?>
@@ -34,7 +34,7 @@
 				<div class="cancel">
 					ou
 				<?php
-					echo $this->Html->link('Cancelar', $this->Html->url(array('controller' => 'publicacaos', 'action' => 'index')));
+					echo $this->Html->link('Cancelar', $this->Html->url(array('controller' => 'publicacaos', 'action' => 'index'),true));
 				?>
 				</div>
 	</div><!-- div class="submit"> -->

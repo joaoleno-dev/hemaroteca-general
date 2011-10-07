@@ -5,9 +5,8 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<!-- <th><?php echo $this->Paginator->sort('id');?></th> -->
-			<th style="width: 86%"><?php echo $this->Paginator->sort('descricao');?></th>
-			<!-- <th><?php echo $this->Paginator->sort('data_cadastro');?></th> -->
-			<th class="actions"><?php __('Actions');?></th>
+			<th style="width: 86%"><?php echo $this->Paginator->sort('Descrição','descricao');?></th>
+			<th class="actions"><?php __('Ações');?></th>
 	</tr>
 	<?php
 	$i = 0;

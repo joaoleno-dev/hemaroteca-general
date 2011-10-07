@@ -14,6 +14,10 @@ p {
 fieldset {
 	border: none;
 }
+small {
+	font: normal 11px Arial,Verdana,sans-serif;
+	color: #666;
+}
 #header {
 	background-color: #266CFF;
 	clear: both;

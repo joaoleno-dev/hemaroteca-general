@@ -3,8 +3,8 @@
 	<h2><?php __('Add Veiculo'); ?></h2>
 	<fieldset>
 	<?php
-		echo $this->Form->input('tipo_veiculo_id');
-		echo $this->Form->input('descricao');
+		echo $this->Form->input('tipo_veiculo_id',array('label' => 'Tipo de veiculo'));
+		echo $this->Form->input('descricao',array('label' => 'Descrição'));
 		// echo $this->Form->input('data_cadastro');
 	?>
 	</fieldset>
@@ -19,7 +19,7 @@
 			<div class="cancel">
 				ou
 			<?php
-				echo $this->Html->link('Cancelar', $this->Html->url(array('controller' => 'veiculos', 'action' => 'index')));
+				echo $this->Html->link('Cancelar', $this->Html->url(array('controller' => 'veiculos', 'action' => 'index'),true));
 			?>
 			</div>
 	</div>

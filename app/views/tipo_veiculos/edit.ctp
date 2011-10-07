@@ -4,7 +4,7 @@
 	<fieldset>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('descricao');
+		echo $this->Form->input('descricao',array('label' => 'Descrição'));
 		//echo $this->Form->input('data_cadastro');
 	?>
 	</fieldset>
@@ -19,7 +19,7 @@
 		<div class="cancel">
 					ou
 				<?php
-					echo $this->Html->link('Cancelar', $this->Html->url(array('controller' => 'tipo_veiculos', 'action' => 'index')));
+					echo $this->Html->link('Cancelar', $this->Html->url(array('controller' => 'tipo_veiculos', 'action' => 'index'),true));
 				?>
 		</div>
 	</div>
