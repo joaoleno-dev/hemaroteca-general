@@ -2,6 +2,44 @@
 class PublicacaosController extends AppController {
 
 	var $name = 'Publicacaos';
+	var $upload_dir = "/var/www/hemaroteca/uploads/";
+	var $dir_separator = '/'; 
+
+	private function create_dir($data = array()) {
+		$upload_dir = $this->upload_dir.$this->dir_separator.'temp';	
+			
+		$this->loadModel('TipoVeiculo');
+		$this->loadModel('Veiculo');
+		if(isset($data)) {
+			$this->TipoVeiculo->id = $data['Publicacao']['tipo_veiculo_id'];
+			$tipo_veiculo = $this->TipoVeiculo->field('descricao');
+			 
+			$this->Veiculo->id = $data['Publicacao']['veiculo_id'];
+			$veiculo = $this->Veiculo->field('descricao');
+			
+			$ano = $data['Publicacao']['data_publicacao']['year'];
+			
+			$path_to_img = 
+				$this->upload_dir.
+				strtolower($tipo_veiculo).
+				$this->dir_separator.
+				strtolower(str_replace( ' ', '',$veiculo)).
+				$this->dir_separator.
+				$ano.
+				$this->dir_separator.
+				$data['Publicacao']['data_publicacao']['day'].'-'.$data['Publicacao']['data_publicacao']['month']
+				.$this->dir_separator;
+			
+			if(mkdir($path_to_img,0777,true)) {
+				// echo 'Diretorio '.$path_to_img.' criado com sucesso.';
+				$upload_dir = $path_to_img;
+			} else {
+				die('Erro na criação do diretório '.$path_to_img);
+				// echo 'Erro na cria��o do diret�rio '.$path_to_img;	
+			}
+			return $upload_dir;
+		}
+	}
 
 	function load_veiculos($tipo_veiculo_id = null) {
 		$this->layout = 'ajax';
@@ -27,7 +65,6 @@ class PublicacaosController extends AppController {
 	
 	function add() {
 		if (!empty($this->data)) {
-			$upload_dir = "/var/www/hemaroteca/uploads/";
 			/*
 			 * Arrumar os campos dos arquivos de upload
 			 * */
@@ -49,12 +86,17 @@ class PublicacaosController extends AppController {
 				/*
 				 * A partir daqui, é necessário mover um a um cada arquivo de upload 
 				 */
+				$upload_dir = $this->create_dir($this->data);
 				foreach($this->data['Publicacao']['arquivos'] as $arquivo) {
-					print_r($arquivo);
-					$upload_file = $upload_dir . basename($arquivo['name']);
 					/*
 					 * Se o arquivo é movido com sucesso, partimos para o cadastro dos metadados.
 					 */
+					$upload_file = $upload_dir . basename($arquivo['name']);
+					
+					echo '<pre>';
+					print_r($upload_file);
+					echo '</pre>';
+					
 					if(move_uploaded_file($arquivo['tmp_name'], $upload_file)) {
 						$this->Session->setFlash('Arquivo '.$arquivo['name'].' foi tranferido com sucesso.');	
 						$this->Arquivo->create();
