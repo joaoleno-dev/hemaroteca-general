@@ -5,7 +5,21 @@ class TipoVeiculosController extends AppController {
 
 	function index() {
 		$this->TipoVeiculo->recursive = 0;
-		$this->set('tipoVeiculos', $this->paginate());
+		$result = '';
+		if(isset($this->data) && !empty($this->data)) {
+			if(isset($this->data['TipoVeiculo']['descricao']) && !empty($this->data['TipoVeiculo']['descricao'])) {
+				$filtro = 'TipoVeiculo.descricao LIKE "%'.$this->data['TipoVeiculo']['descricao'].'%"';
+				$this->paginate = array(
+					'limit' => 15,
+					'order' => array('TipoVeiculo.descricao' => 'asc'),
+					'conditions' => array($filtro)
+				);
+			}
+			$result = $this->paginate();
+		} else {
+			$result =  $this->paginate();
+		}
+		$this->set('tipoVeiculos',$result); 
 	}
 
 	function view($id = null) {

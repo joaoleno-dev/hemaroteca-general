@@ -84,13 +84,13 @@ small {
 	overflow: hidden;
 }
 .index .button {
-	border-radius: 5px;
+	border-radius: 5px 5px 5px 5px;
 	display: inline-block;
-	font: normal bold 14px Arial,Verdana,sans-serif;
-	margin: 10px 10px 0 10px;
+	float: right;
+	font: bold 14px Arial,Verdana,sans-serif;
+	margin: 8px 20px;
 	padding: 10px;
 	text-decoration: none;
-	/*text-shadow: -1px 0 0 rgba(0, 0, 0, 0.7);*/
 }
 .green {
 	color: white;
@@ -261,4 +261,40 @@ table {
 	margin: 10px;
 	padding: 5px;
 	text-align: center;
+}
+/*FORM DE PESQUISA*/
+.pesquisa fieldset {
+	background-color: #F7F7F7;
+	border: 1px solid #DEDEDE;
+	clear: both;
+	display: block;
+	margin: 0 15px;
+	overflow: hidden;
+	padding: 15px 5px 0;
+}
+.pesquisa fieldset div{
+	overflow: hidden;
+}
+.pesquisa label {
+	display: block;
+	float: left;
+	margin-right: 5px;
+	padding: 5px;
+	text-align: right;
+	width:  15%;
+}
+.pesquisa input {
+	display: block;
+	float:left;
+	height: 25px;
+	width: 60%;
+}
+.pesquisa input[type='submit'] {
+	clear: both;
+	display: block;
+	float: none;
+	height: 40px;
+	margin: 10px auto;
+	overflow: hidden;
+	width: 150px;
 }

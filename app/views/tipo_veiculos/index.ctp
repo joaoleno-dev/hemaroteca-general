@@ -2,6 +2,18 @@
 <div class="tipoVeiculos index">
 	<h2><?php __('Tipo de Veiculos');?></h2>
 	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'tipo_veiculos','action' => 'add')); ?>">Novo Tipo de Veiculo</a>
+	<?php echo $this->Form->create('TipoVeiculo',array('class' => 'pesquisa')); ?>
+	<fieldset>
+		<?php echo $this->Form->input('descricao',array('label' => 'Descrição')); 	?>
+		<?php 
+			echo $this->Form->end(array(
+				'label' => 'Pesquisar',
+				'class' => 'button blue',
+				'div' => false
+			));
+		?>
+	</fieldset>
+		
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<!-- <th><?php echo $this->Paginator->sort('id');?></th> -->
