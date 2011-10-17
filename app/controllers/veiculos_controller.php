@@ -5,7 +5,30 @@ class VeiculosController extends AppController {
 
 	function index() {
 		$this->Veiculo->recursive = 0;
-		$this->set('veiculos', $this->paginate());
+		$result = '';
+		$filtro = '';
+		
+		if(isset($this->data) && !empty($this->data)) {
+			if(isset($this->data['Veiculo']['descricao']) && !empty($this->data['Veiculo']['descricao'])) {
+				$filtro .= 'Veiculo.descricao LIKE "%'.$this->data['Veiculo']['descricao'].'%"';
+			}
+			if(isset($this->data['Veiculo']['tipo_veiculo_id']) && !empty($this->data['Veiculo']['tipo_veiculo_id'])) {
+				$filtro .= 'Veiculo.tipo_veiculo_id  =  '.$this->data['Veiculo']['tipo_veiculo_id'];
+			}
+			$this->paginate = array(
+				'limit' => 15,
+				'order' => array('Veiculo.descricao' => 'asc'),
+				'conditions' => array($filtro)
+			);
+			$result = $this->paginate();
+		} else {
+			$result =  $this->paginate();
+		}
+		$this->loadModel('TipoVeiculo');
+		$tipoVeiculos = $this->TipoVeiculo->find('list');
+		
+		$this->set('tipoVeiculos',$tipoVeiculos);
+		$this->set('veiculos', $result);
 	}
 
 	function view($id = null) {

@@ -30,3 +30,8 @@
 2011-10-13 21:49:19 Warning: Warning (512): /var/www/hemaroteca/app/tmp/cache/models/ is not writable in [/var/www/hemaroteca/cake/libs/cache/file.php, line 278]
 2011-10-13 21:49:20 Warning: Warning (512): /var/www/hemaroteca/app/tmp/cache/persistent/ is not writable in [/var/www/hemaroteca/cake/libs/cache/file.php, line 278]
 2011-10-13 21:49:20 Warning: Warning (512): /var/www/hemaroteca/app/tmp/cache/models/ is not writable in [/var/www/hemaroteca/cake/libs/cache/file.php, line 278]
+2011-10-17 12:51:43 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/hemaroteca/app/views/veiculos/index.ctp, line 24]
+2011-10-17 12:52:17 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/hemaroteca/app/views/veiculos/index.ctp, line 24]
+2011-10-17 12:52:30 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/hemaroteca/app/views/veiculos/index.ctp, line 24]
+2011-10-17 12:53:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/hemaroteca/app/views/veiculos/index.ctp, line 24]
+2011-10-17 12:53:08 Warning: Warning (2): Invalid argument supplied for foreach() in [/var/www/hemaroteca/app/views/veiculos/index.ctp, line 24]

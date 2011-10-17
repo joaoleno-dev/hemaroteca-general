@@ -1,6 +1,18 @@
 <div class="veiculos index">
 	<h2><?php __('Veiculos');?></h2>
 	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'veiculos','action' => 'add')); ?>">Novo Veiculo</a>
+	<?php echo $this->Form->create('Veiculo',array('class' => 'pesquisa')); ?>
+	<fieldset>
+		<?php echo $this->Form->input('tipo_veiculo_id',array('label' => 'Tipo de veiculo','empty' => true)); 	?>
+		<?php echo $this->Form->input('descricao',array('label' => 'Descrição')); 	?>
+		<?php 
+			echo $this->Form->end(array(
+				'label' => 'Pesquisar',
+				'class' => 'button blue',
+				'div' => false
+			));
+		?>
+	</fieldset>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th style="width: 72%;"><?php echo $this->Paginator->sort('Descrição','descricao');?></th>
