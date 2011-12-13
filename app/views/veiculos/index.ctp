@@ -33,9 +33,9 @@
 			<?php echo $veiculo['TipoVeiculo']['descricao']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $veiculo['Veiculo']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $veiculo['Veiculo']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $veiculo['Veiculo']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $veiculo['Veiculo']['id'])); ?>
+			<?php echo $this->Html->link($this->Html->image('view.png'), array('action' => 'view', $veiculo['Veiculo']['id'])); ?>
+			<?php echo $this->Html->link($this->Html->image('pencil.png'), array('action' => 'edit', $veiculo['Veiculo']['id'])); ?>
+			<?php echo $this->Html->link($this->Html->image('delete.png'), array('action' => 'delete', $veiculo['Veiculo']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $veiculo['Veiculo']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

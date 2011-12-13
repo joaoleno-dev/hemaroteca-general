@@ -17,25 +17,29 @@ class ArquivosController extends AppController {
 	}
 
 	function add() {
-		$upload_dir = "/var/www/hemaroteca/uploads/";
-		$upload_file = $upload_dir . basename($this->data['Arquivo']['arquivo_url']['name']);
+		$upload_dir = "/var/www/hemaroteca/app/webroot/img/uploads/";
+		
+		$upload_file = $upload_dir . basename($this->data['Arquivo']['arquivo']['name']);
 		
 		if (!empty($this->data)) {
-			if(move_uploaded_file($this->data['Arquivo']['arquivo_url']['tmp_name'], $upload_file)) {
-				$this->Session->setFlash('Arquivo '.$this->data['Arquivo']['arquivo_url']['name'].' foi tranferido com sucesso.');	
+				  // print_r($this->data);exit;
+				$this->data['Arquivo']['tipo_arquivo'] = $this->data['Arquivo']['arquivo']['type'];
+				$this->data['Arquivo']['nome_arquivo'] = $this->data['Arquivo']['arquivo']['name'];
 				$this->data['Arquivo']['arquivo_url'] = $upload_file;
-				$this->data['Arquivo']['nome_arquivo'] = $this->data['Arquivo']['arquivo_url']['name'];
+				// print_r($this->data);exit;
 				$this->Arquivo->create();
 				if ($this->Arquivo->save($this->data)) {
 					$this->Session->setFlash(__('Os metadados do arquivo foram salvos com sucesso', true));
-					$this->redirect(array('action' => 'index'));
+					if(move_uploaded_file($this->data['Arquivo']['arquivo']['tmp_name'], $upload_file)) {
+						$this->Session->setFlash('Arquivo '.$this->data['Arquivo']['arquivo']['name'].' foi tranferido com sucesso.');	
+						$this->redirect(array('action' => 'index'));
+					} else {
+						$this->Session->setFlash('ERRO na transferência do arquivo '.$this->data['Arquivo']['arquivo']['name']);	
+						$this->Arquivo->delete($this->Arquivo->id);
+					}
 				} else {
 					$this->Session->setFlash(__('The arquivo could not be saved. Please, try again.', true));
-				}//if ($this->Arquivo->save($this->data))
-			} else {
-				$this->Session->setFlash('ERRO na transferência do arquivo '.$this->data['Arquivo']['arquivo_url']['name']);	
-			}//if(move_uploaded_file($this->data['Arquivo']['arquivo_url']['tmp_name'], $upload_file)) 
-			
+				}
 		}//if (!empty($this->data))
 		$publicacaos = $this->Arquivo->Publicacao->find('list');
 		$this->set(compact('publicacaos'));

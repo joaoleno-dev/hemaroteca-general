@@ -2,7 +2,7 @@
 class PublicacaosController extends AppController {
 
 	var $name = 'Publicacaos';
-	var $upload_dir = "/var/www/hemaroteca/uploads/";
+	var $upload_dir = "/var/www/hemaroteca/app/webroot/img/uploads/";
 	var $dir_separator = '/'; 
 
 	private function create_dir($data = array()) {

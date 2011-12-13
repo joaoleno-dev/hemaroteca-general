@@ -3,13 +3,9 @@
 	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'publicacaos','action' => 'add')); ?>">Nova Publicação</a>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('veiculo_id');?></th>
 			<th><?php echo $this->Paginator->sort('titulo');?></th>
 			<th><?php echo $this->Paginator->sort('data_publicacao');?></th>
-			<th><?php echo $this->Paginator->sort('data_cadastro');?></th>
-			<th><?php echo $this->Paginator->sort('informacao');?></th>
-			<th><?php echo $this->Paginator->sort('resumo');?></th>
 			<th><?php echo $this->Paginator->sort('avaliacao');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
@@ -22,15 +18,11 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $publicacao['Publicacao']['id']; ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($publicacao['Veiculo']['descricao'], array('controller' => 'veiculos', 'action' => 'view', $publicacao['Veiculo']['id'])); ?>
 		</td>
 		<td><?php echo $publicacao['Publicacao']['titulo']; ?>&nbsp;</td>
 		<td><?php echo $publicacao['Publicacao']['data_publicacao']; ?>&nbsp;</td>
-		<td><?php echo $publicacao['Publicacao']['data_cadastro']; ?>&nbsp;</td>
-		<td><?php echo $publicacao['Publicacao']['informacao']; ?>&nbsp;</td>
-		<td><?php echo $publicacao['Publicacao']['resumo']; ?>&nbsp;</td>
 		<td><?php echo $publicacao['Publicacao']['avaliacao']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $publicacao['Publicacao']['id'])); ?>

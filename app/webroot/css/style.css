@@ -54,7 +54,7 @@ small {
 	margin: 0 5px 0 0;
 	text-decoration: none;
 }
-#menu ul li a{
+#menu ul li a {
 	/*background-color: #d0dfff;*/
 	/*border: 1px solid #7ba6ff;*/
 	color: black;
@@ -65,6 +65,9 @@ small {
 	text-decoration: none;
 	
 	border-radius: 3px;
+}
+#menu ul li a:hover {
+	text-decoration: underline;
 }
 #content {
 	background-color: white;
@@ -159,99 +162,6 @@ table {
 	height: 50px;
 	width: 100%;
 }
-/***  FORM ADD ***/
-.input {
-	margin-bottom: 10px;
-}
-.form fieldset {
-	border-left: none;
-	border-right: none;
-	border-bottom: none;
-	margin: 10px 10px 0 10px;
-	padding: 5px;
-}
-.form label {
-	display: block;
-}
-.form input[type = 'text'] {
-	height: 30px;
-	font: normal 16px Arial, Verdana, sans-serif;
-	padding-left: 5px;
-	width: 80%;	
-}
-.form select {
-		height: 30px;
-		width: 40%;	
-}
-.form select  {
-	font: normal 16px Arial, Verdana, sans-serif;
-	margin-bottom: 10px;
-	padding-left: 5px;
-	padding-top: 2px;
-}
-.form textarea {
-	width: 80%;
-}
-/*BOTAO SUBMIT*/
-.submit {
-	display: inline-block;
-	margin: 0 38%;
-	overflow: hidden;
-}
-.submit input {
-	float: left;
-}
-.submit input {
-	 border-radius: 0;
-	 display: block;
-	 font: normal bold 14px Arial, Verdana, sans-serif;
-	 height: 40px;
-	 margin: 0 auto 10px;
-	min-width: 100px;
-}
-.submit .cancel {
-	float: left;
-	font-size: 12px;
-	margin: 15px 0 0 5px;
-}
-/*CAMPOS DE DATA*/
-.date select {
-	width: 120px;
-}
-/*CAMPOS DE RADIO*/
-.radio fieldset {
-	border-top: 1px solid black;
-	margin: 0;
-}
-.radio legend {
-	display: block;
-	padding: 10px;
-}
-.radio input {
-	display: block;
-	float: left;
-}
-/*CAMPOS DE UPLOAD*/
-#files-div fieldset {
-	border-top: 1px solid black;
-	margin: 0;
-}
-#files-div  legend {
-	display: block;
-	padding: 10px;
-} 
-#files-div input[type="file"] {
-	display: block;
-	width: 100px;
-}
-#file-adder em {
-	color: #666666;
-	font-size: 12px;
-}
-#file-adder em:hover {
-	color: black;
-	text-decoration: underline;
-}
 /*FLASH MESSAGE*/
 #flashMessage {
 	background-color: #DEDEDE;
@@ -261,40 +171,4 @@ table {
 	margin: 10px;
 	padding: 5px;
 	text-align: center;
-}
-/*FORM DE PESQUISA*/
-.pesquisa fieldset {
-	background-color: #F7F7F7;
-	border: 1px solid #DEDEDE;
-	clear: both;
-	display: block;
-	margin: 0 15px;
-	overflow: hidden;
-	padding: 15px 5px 0;
-}
-.pesquisa fieldset div{
-	overflow: hidden;
-}
-.pesquisa label {
-	display: block;
-	float: left;
-	margin-right: 5px;
-	padding: 5px;
-	text-align: right;
-	width:  15%;
-}
-.pesquisa input {
-	display: block;
-	float:left;
-	height: 25px;
-	width: 60%;
-}
-.pesquisa input[type='submit'] {
-	clear: both;
-	display: block;
-	float: none;
-	height: 40px;
-	margin: 10px auto;
-	overflow: hidden;
-	width: 150px;
 }

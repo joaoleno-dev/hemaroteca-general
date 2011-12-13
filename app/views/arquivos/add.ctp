@@ -3,8 +3,8 @@
 	<fieldset>
 		<legend><?php __('Add Arquivo'); ?></legend>
 	<?php
-		echo $this->Form->input('publicacao_id');
-		 echo $this->Form->input('arquivo_url',array('type' => 'file'));
+		 echo $this->Form->input('arquivo',array('type' => 'file'));
+		 echo $this->Form->hidden('Arquivo.id');
 		// echo $this->Form->input('data_cadastro');
 		// echo $this->Form->input('nome_arquivo');
 	?>

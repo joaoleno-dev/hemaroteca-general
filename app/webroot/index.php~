@@ -52,6 +52,7 @@
 	if (!defined('CAKE_CORE_INCLUDE_PATH')) {
 		define('CAKE_CORE_INCLUDE_PATH', '..'.DS.'..'.DS.'..'.DS);
 	}
+	echo CAKE_CORE_INCLUDE_PATH;exit;
 
 /**
  * Editing below this line should NOT be necessary.
