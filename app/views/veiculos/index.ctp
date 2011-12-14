@@ -33,9 +33,9 @@
 			<?php echo $veiculo['TipoVeiculo']['descricao']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link($this->Html->image('view.png'), array('action' => 'view', $veiculo['Veiculo']['id'])); ?>
-			<?php echo $this->Html->link($this->Html->image('pencil.png'), array('action' => 'edit', $veiculo['Veiculo']['id'])); ?>
-			<?php echo $this->Html->link($this->Html->image('delete.png'), array('action' => 'delete', $veiculo['Veiculo']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $veiculo['Veiculo']['id'])); ?>
+			<?php echo $this->Html->link($this->Html->image('search.png',array('alt' => 'Visualizar')), array('action' => 'view', $veiculo['Veiculo']['id']),array('escape' => false)); ?>
+			<?php echo $this->Html->link($this->Html->image('pencil.png',array('alt' => 'Alterar')), array('action' => 'edit', $veiculo['Veiculo']['id']),array('escape' => false)); ?>
+			<?php echo $this->Html->link($this->Html->image('delete.png',array('alt' => 'Deletar')), array('action' => 'delete', $veiculo['Veiculo']['id']), array('escape' => false), sprintf(__('Are you sure you want to delete # %s?', true), $veiculo['Veiculo']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

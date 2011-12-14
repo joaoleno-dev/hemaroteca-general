@@ -1,5 +1,5 @@
 <div class="publicacaos index">
-	<h2><?php __('Publicacaos');?></h2>
+	<h2><?php __('Publicações');?></h2>
 	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'publicacaos','action' => 'add')); ?>">Nova Publicação</a>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -18,16 +18,14 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $this->Html->link($publicacao['Veiculo']['descricao'], array('controller' => 'veiculos', 'action' => 'view', $publicacao['Veiculo']['id'])); ?>
-		</td>
+		<td><?php echo $publicacao['Veiculo']['descricao']; ?></td>
 		<td><?php echo $publicacao['Publicacao']['titulo']; ?>&nbsp;</td>
 		<td><?php echo $publicacao['Publicacao']['data_publicacao']; ?>&nbsp;</td>
 		<td><?php echo $publicacao['Publicacao']['avaliacao']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $publicacao['Publicacao']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $publicacao['Publicacao']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $publicacao['Publicacao']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $publicacao['Publicacao']['id'])); ?>
+			<?php echo $this->Html->link($this->Html->image('search.png',array('alt' => 'Visualizar')), array('action' => 'view', $publicacao['Publicacao']['id']),array('escape' => false)); ?>
+			<?php echo $this->Html->link($this->Html->image('pencil.png',array('alt' => 'Alterar')), array('action' => 'edit', $publicacao['Publicacao']['id']),array('escape' => false)); ?>
+			<?php echo $this->Html->link($this->Html->image('delete.png',array('alt' => 'Deletar')), array('action' => 'delete', $publicacao['Publicacao']['id']), array('escape' => false), sprintf(__('Are you sure you want to delete # %s?', true), $publicacao['Publicacao']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -45,14 +43,4 @@
  |
 		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
-</div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Nova Publicação', true), array('controller' => 'publicacaos','action' => 'add'));?></li>
-		<li><?php echo $this->Html->link(__('Tipos de veiculos', true), array('controller' => 'tipo_veiculos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Veiculos', true), array('controller' => 'veiculos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Publicações', true), array('controller' => 'publicacaos','action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('Arquivos', true), array('controller' => 'arquivos','action' => 'index'));?></li>
-	</ul>
 </div>

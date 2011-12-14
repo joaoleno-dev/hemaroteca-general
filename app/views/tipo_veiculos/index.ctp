@@ -33,9 +33,9 @@
 		<td><?php echo $tipoVeiculo['TipoVeiculo']['descricao']; ?>&nbsp;</td>
 		<!-- <td><?php echo $tipoVeiculo['TipoVeiculo']['data_cadastro']; ?>&nbsp;</td> -->
 		<td class="actions">
-			<?php echo $this->Html->link($this->Html->image('view.png',array('alt' => 'View')), array('action' => 'view', $tipoVeiculo['TipoVeiculo']['id'])); ?>
-			<?php echo $this->Html->link($this->Html->image('pencil.png',array('alt' => 'Alterar')), array('action' => 'edit', $tipoVeiculo['TipoVeiculo']['id'])); ?>
-			<?php echo $this->Html->link($this->Html->image('delete.png',array('alt' => 'Deletar')), array('action' => 'delete', $tipoVeiculo['TipoVeiculo']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $tipoVeiculo['TipoVeiculo']['id'])); ?>
+			<?php echo $this->Html->link($this->Html->image('search.png',array('alt' => 'View')), array('action' => 'view', $tipoVeiculo['TipoVeiculo']['id']),array('escape' => false)); ?>
+			<?php echo $this->Html->link($this->Html->image('pencil.png',array('alt' => 'Alterar')), array('action' => 'edit', $tipoVeiculo['TipoVeiculo']['id']),array('escape' => false)); ?>
+			<?php echo $this->Html->link($this->Html->image('delete.png',array('alt' => 'Deletar')), array('action' => 'delete', $tipoVeiculo['TipoVeiculo']['id']), array('escape' => false), sprintf(__('Are you sure you want to delete # %s?', true), $tipoVeiculo['TipoVeiculo']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
