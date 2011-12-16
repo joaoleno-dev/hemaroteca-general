@@ -4,6 +4,7 @@ class PublicacaosController extends AppController {
 	var $name = 'Publicacaos';
 	var $upload_dir = "/var/www/hemaroteca/app/webroot/img/uploads/";
 	var $dir_separator = '/'; 
+	var $helpers = array('Time');
 
 	private function create_dir($data = array()) {
 		$upload_dir = $this->upload_dir.$this->dir_separator.'temp';	
@@ -52,7 +53,27 @@ class PublicacaosController extends AppController {
 
 	function index() {
 		$this->Publicacao->recursive = 0;
-		$this->set('publicacaos', $this->paginate());
+		$filtro = array();
+		if(isset($this->data) && !empty($this->data)) {
+			if(isset($this->data['Publicacao']['titulo']) && !empty($this->data['Publicacao']['titulo'])) {
+				$filtro['UPPER(Publicacao.titulo) LIKE'] = '%'.strtoupper($this->data['Publicacao']['titulo']).'%';
+			}
+			if(isset($this->data['Publicacao']['resumo']) && !empty($this->data['Publicacao']['resumo'])) {
+				$filtro['UPPER(Publicacao.resumo) LIKE'] = '%'.strtoupper($this->data['Publicacao']['resumo']).'%';
+			}
+			if(isset($this->data['Publicacao']['avaliacao']) && $this->data['Publicacao']['avaliacao'] != '') {
+				$filtro['Publicacao.avaliacao'] = $this->data['Publicacao']['avaliacao'];
+			}
+			$this->paginate = array(
+				'limit' => 15,
+				'order' => array('Publicacao.id' => 'asc'),
+				'conditions' => array($filtro)
+			);
+			$result = $this->paginate();
+		} else {
+			$result =  $this->paginate();
+		}
+		$this->set('publicacaos', $result);
 	}
 
 	function view($id = null) {

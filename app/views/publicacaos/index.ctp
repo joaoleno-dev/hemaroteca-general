@@ -1,6 +1,19 @@
 <div class="publicacaos index">
 	<h2><?php __('Publicações');?></h2>
 	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'publicacaos','action' => 'add')); ?>">Nova Publicação</a>
+	<?php echo $this->Form->create('Publicacao',array('class' => 'pesquisa')); ?>
+	<fieldset>
+		<?php echo $this->Form->input('titulo',array('label' => __('Título',true))); ?>
+		<?php echo $this->Form->input('resumo',array('label' => __('Resumo',true))); ?>
+		<?php echo $this->Form->input('avaliacao',array('label' => __('Avaliação',true),'options' => array('Negativa','Positiva'),'empty' => true)); ?>
+		<?php 
+			echo $this->Form->end(array(
+				'label' => 'Pesquisar',
+				'class' => 'button blue',
+				'div' => false
+			));
+		?>
+	</fieldset>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('veiculo_id');?></th>
@@ -20,8 +33,17 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $publicacao['Veiculo']['descricao']; ?></td>
 		<td><?php echo $publicacao['Publicacao']['titulo']; ?>&nbsp;</td>
-		<td><?php echo $publicacao['Publicacao']['data_publicacao']; ?>&nbsp;</td>
-		<td><?php echo $publicacao['Publicacao']['avaliacao']; ?>&nbsp;</td>
+		<td><?php echo $this->Time->format('d/m/Y',$publicacao['Publicacao']['data_publicacao']); ?>&nbsp;</td>
+		<td>
+		<?php 
+		if($publicacao['Publicacao']['avaliacao'] == true) {
+			echo __('Positiva',true);
+		} else {
+			echo __('Negativa',true);
+		}
+		?>
+		&nbsp;
+		</td>
 		<td class="actions">
 			<?php echo $this->Html->link($this->Html->image('search.png',array('alt' => 'Visualizar')), array('action' => 'view', $publicacao['Publicacao']['id']),array('escape' => false)); ?>
 			<?php echo $this->Html->link($this->Html->image('pencil.png',array('alt' => 'Alterar')), array('action' => 'edit', $publicacao['Publicacao']['id']),array('escape' => false)); ?>

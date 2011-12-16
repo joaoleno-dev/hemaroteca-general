@@ -844,7 +844,7 @@ class FormHelper extends AppHelper {
 			$options += array('empty' => false);
 		}
 		if ($options['type'] === 'datetime' || $options['type'] === 'date' || $options['type'] === 'time') {
-			$dateFormat = $this->_extractOption('dateFormat', $options, 'MDY');
+			$dateFormat = $this->_extractOption('dateFormat', $options, 'DMY');
 			$timeFormat = $this->_extractOption('timeFormat', $options, 12);
 			unset($options['dateFormat'], $options['timeFormat']);
 		}
