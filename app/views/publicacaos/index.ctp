@@ -16,10 +16,10 @@
 	</fieldset>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('veiculo_id');?></th>
-			<th><?php echo $this->Paginator->sort('titulo');?></th>
-			<th><?php echo $this->Paginator->sort('data_publicacao');?></th>
-			<th><?php echo $this->Paginator->sort('avaliacao');?></th>
+			<th style="width:43%;"><?php echo $this->Paginator->sort('titulo');?></th>
+			<th style="width:20%;"><?php echo $this->Paginator->sort('veiculo_id');?></th>
+			<th style="width:12%;"><?php echo $this->Paginator->sort('data_publicacao');?></th>
+			<th style="width:12%;"><?php echo $this->Paginator->sort('avaliacao');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -33,8 +33,8 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $publicacao['Veiculo']['descricao']; ?></td>
 		<td><?php echo $publicacao['Publicacao']['titulo']; ?>&nbsp;</td>
-		<td><?php echo $this->Time->format('d/m/Y',$publicacao['Publicacao']['data_publicacao']); ?>&nbsp;</td>
-		<td>
+		<td align="center"><?php echo $this->Time->format('d/m/Y',$publicacao['Publicacao']['data_publicacao']); ?>&nbsp;</td>
+		<td align="center">
 		<?php 
 		if($publicacao['Publicacao']['avaliacao'] == true) {
 			echo __('Positiva',true);

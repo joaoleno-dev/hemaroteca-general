@@ -1,4 +1,10 @@
 /*FORM DE PESQUISA*/
+form {
+	font-size: 12px;
+}
+label {
+	font-size: 14px;
+}
 .pesquisa fieldset {
 	background-color: #F7F7F7;
 	border: 1px solid #DEDEDE;
@@ -22,7 +28,7 @@
 .pesquisa input {
 	display: block;
 	float:left;
-	height: 25px;
+	height: 20px;
 	width: 60%;
 }
 .pesquisa input[type='submit'] {
@@ -36,7 +42,7 @@
 }
 .pesquisa select {
 	display: block;
-	height: 32px;
+	height: 27px;
 	width: 250px;
 }
 .small-text {
@@ -120,17 +126,17 @@
 	display: block;
 }
 .form input[type = 'text'] {
-	height: 30px;
+	height: 20px;
 	font: normal 16px Arial, Verdana, sans-serif;
 	padding-left: 5px;
 	width: 80%;	
 }
 .form select {
-		height: 30px;
+		height: 27px;
 		width: 40%;	
 }
 .form select  {
-	font: normal 16px Arial, Verdana, sans-serif;
+	font: normal Arial, Verdana, sans-serif;
 	margin-bottom: 10px;
 	padding-left: 5px;
 	padding-top: 2px;

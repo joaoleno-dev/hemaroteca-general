@@ -5,6 +5,7 @@ verde-vonheld : #C5F409
 body {
 	background-color: #f7f7f7;
 	font-family: Arial, Verdana, sans-serif;
+	font-size: 12px;
 	margin: 0 ;
 	padding: 0;
 }
@@ -107,45 +108,46 @@ small {
 	background-image: -moz-linear-gradient(top,#227BF5,#074dab);
 	border: 1px solid #042f6a;
 }
-.index h2,.form h2 {
-	background-color:  #266cff;
-	/*background-image: -moz-linear-gradient(top, #266cff, #002d8c);*/
-	color: white;
-	font: normal bold 16px Arial,Verdana,sans-serif;
-	margin: 0;
-	padding: 10px 0 10px 10px;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
+.index h2, .form h2 {
+  background-color: #266CFF;
+  color: white;
+  font: bold 12px Arial,Verdana,sans-serif;
+  margin: 0;
+  padding: 10px 0 10px 10px;
+  text-transform: uppercase;
 }
+/*tabelas*/
 .index table {
 	clear: both;
 	display: block;
 	margin: 10px;
 }
+.actions {
+	width: 114px;
+}
+td.actions {
+	padding-left: 20px;
+}
 table {
 	border-collapse:collapse;
+	border: 1px solid #002D8C;
+	width: 98%;
 }
- th, td {
-	border: 1px solid #002d8c;
-}
-.index table tr th {
+table tr th {
 	background-color: #266CFF;
-	font: normal bold 15px Arial,Verdana,sans-serif;
+	font: normal bold 14px Arial,Verdana,sans-serif;
 	padding: 5px;
 }
-.index table th a,.index table th.actions{
+table th a,table th{
 	color: white;
 	text-decoration: none;
 }
-.index td {
-	border: 1px solid #002d8c;
+td {
 	padding: 5px 5px;
 }
 .altrow {
 	background-color: #f2f6ff;
-}
-.actions {
-	border-left: 1px solid #002d8c;
-}
+}	
 .index p {
 	margin: 0 auto;
 	text-align: center;
