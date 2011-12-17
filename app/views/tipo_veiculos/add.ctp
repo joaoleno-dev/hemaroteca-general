@@ -1,6 +1,6 @@
 <div class="tipoVeiculos form">
 <?php echo $this->Form->create('TipoVeiculo');?>
-	<h2><?php __('Novo Tipo de Veiculo'); ?></h2>
+	<h2><?php __('Novo Tipo de Veículo'); ?></h2>
 	<fieldset>
 	<?php
 		echo $this->Form->input('descricao',array('label' => 'Descrição'));

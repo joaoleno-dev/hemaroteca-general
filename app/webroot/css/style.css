@@ -86,6 +86,7 @@ small {
 .index {
 	display: block;
 	overflow: hidden;
+	padding-bottom: 15px;
 }
 .index .button {
 	border-radius: 5px 5px 5px 5px;
@@ -95,18 +96,6 @@ small {
 	margin: 8px 20px;
 	padding: 10px;
 	text-decoration: none;
-}
-.green {
-	color: white;
-	background-color: #C5F409;
-	background-image: -moz-linear-gradient(top,#c5f409,#83a206);
-	border: 1px solid #4e6104;
-}
-.blue {
-	color: white;
-	background-color: #227BF5;
-	background-image: -moz-linear-gradient(top,#227BF5,#074dab);
-	border: 1px solid #042f6a;
 }
 .index h2, .form h2 {
   background-color: #266CFF;
@@ -146,16 +135,32 @@ td {
 	padding: 5px 5px;
 }
 .altrow {
-	background-color: #f2f6ff;
+	/*background-color: #f2f6ff;*/
+	background-color: #d0deff;
 }	
 .index p {
 	margin: 0 auto;
 	text-align: center;
 }
 .paging {
-	font: normal 15px Arial,Verdana,sans-serif;
-	margin: 10px 0;
-	text-align: center;	
+	display: block;
+	float: left;
+	font: normal 12px Arial,Verdana,sans-serif;
+	margin: 0 10px 0 0;
+	text-align: right;	
+	width: 740px;
+}
+.paging img {
+	margin-top: -2px;
+}
+.paging a:visited {
+	color: black;
+}
+.table-info {
+	display: block;
+	float: left;
+	margin: 0  0 0 10px;
+	width: 200px;
 }
 #footer {
 	background-color: #266CFF;	
@@ -166,11 +171,52 @@ td {
 }
 /*FLASH MESSAGE*/
 #flashMessage {
-	background-color: #DEDEDE;
-	border: 1px solid black;
 	clear: both;
 	display: block;
 	margin: 10px;
 	padding: 5px;
 	text-align: center;
+}
+#flashMessage span {
+	margin-left: 4px;
+	vertical-align: super;
+}
+.success {
+	background-color: white;
+	border: 2px solid green;
+}
+.fail {
+	background-color: white;
+	border: 2px solid red;
+}
+.warning {
+	background-color: white;
+	border: 2px solid orange;
+}
+/*AVULSOS*/
+.span-detail {
+	display: inline-block;
+	padding: 2px 0;
+	text-align: center;
+	width: 60px;
+}
+.red {
+	background-color: #AE432E;	
+	color: white;
+}
+.green-opaque {
+	background-color: #6A9912;
+	color: white;
+}
+.green {
+	color: white;
+	background-color: #C5F409;
+	background-image: -moz-linear-gradient(top,#c5f409,#83a206);
+	border: 1px solid #4e6104;
+}
+.blue {
+	color: white;
+	background-color: #227BF5;
+	background-image: -moz-linear-gradient(top,#227BF5,#074dab);
+	border: 1px solid #042f6a;
 }

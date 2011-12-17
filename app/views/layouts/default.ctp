@@ -22,7 +22,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php __('SRMM - Secretaria da Região Metropolitana de Manaus :: Sistema Hemaroteca :: '); ?>
+		<?php __('SRMM - Secretaria da Região Metropolita	na de Manaus :: Sistema Hemaroteca :: '); ?>
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
@@ -31,7 +31,7 @@
 		//echo $this->Html->css('cake.generic');
 		echo $this->Html->css('style');
 		echo $this->Html->css('forms');
-
+		echo $this->Html->script('jquery-1.7.1.js');
 		echo $scripts_for_layout;
 	?>
 </head>
@@ -42,11 +42,11 @@
 		</div>
 		<div id="menu">
 			<ul>
-				<li><?php echo $this->Html->link(__('Tipo de veiculos',true),$this->Html->url(array('controller' => 'tipo_veiculos'),true));?></li>
-				<li><?php echo $this->Html->link(__('Veiculos',true),$this->Html->url(array('controller' => 'veiculos'),true));?></li>
-				<li><?php echo $this->Html->link(__('Publicações',true),$this->Html->url(array('controller' => 'publicacaos'),true));?></li>
-				<li><?php echo $this->Html->link(__('Arquivos',true),$this->Html->url(array('controller' => 'arquivos'),true));?></li>
-				<li><?php echo $this->Html->link(__('Labs',true),$this->Html->url(array('controller' => 'labs'),true));?><small class="small-text">BETA</small></li>
+				<li><?php echo $this->Html->link(__('Tipo de veículos',true),$this->Html->url(array('controller' => 'tipo_veiculos','action' => 'index'),true));?></li>
+				<li><?php echo $this->Html->link(__('Veículos',true),$this->Html->url(array('controller' => 'veiculos','action' => 'index'),true));?></li>
+				<li><?php echo $this->Html->link(__('Publicações',true),$this->Html->url(array('controller' => 'publicacaos','action' => 'index'),true));?></li>
+				<li><?php echo $this->Html->link(__('Arquivos',true),$this->Html->url(array('controller' => 'arquivos','action' => 'index'),true));?></li>
+				<li><?php echo $this->Html->link(__('Labs',true),$this->Html->url(array('controller' => 'labs','action' => 'index'),true));?><small class="small-text">BETA</small></li>
 			</ul>
 		</div>
 		<div id="content">
@@ -67,4 +67,10 @@
 	</div>
 	<?php //echo $this->element('sql_dump'); ?>
 </body>
+<script>
+	$(document).ready(function() {
+		$('#flashMessage').animate({opacity: 1.0}, 3000).fadeOut();
+		$("input:text:visible:first").focus();
+	});
+</script>
 </html>

@@ -5,6 +5,7 @@ class PublicacaosController extends AppController {
 	var $upload_dir = "/var/www/hemaroteca/app/webroot/img/uploads/";
 	var $dir_separator = '/'; 
 	var $helpers = array('Time');
+	var $paginate = array('limit' => 10);
 
 	private function create_dir($data = array()) {
 		$upload_dir = $this->upload_dir.$this->dir_separator.'temp';	
@@ -78,7 +79,7 @@ class PublicacaosController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid publicacao', true));
+			$this->Session->setFlash(__('Invalid publicacao', true),'flash_bad');
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('publicacao', $this->Publicacao->read(null, $id));
@@ -125,19 +126,19 @@ class PublicacaosController extends AppController {
 						$arquivo['nome_arquivo'] = $arquivo['name'];
 						$arquivo['publicacao_id'] = $this->Publicacao->id;
 						if ($this->Arquivo->save($arquivo)) {
-							$this->Session->setFlash(__('Os metadados do arquivo foram salvos com sucesso', true));
+							$this->Session->setFlash(__('Os metadados do arquivo foram salvos com sucesso', true),'flash_good');
 							//$this->redirect(array('action' => 'index'));
 						} else {
-							$this->Session->setFlash(__('The arquivo could not be saved. Please, try again.', true));
+							$this->Session->setFlash(__('The arquivo could not be saved. Please, try again.', true),'flash_bad');
 						}//if ($this->Arquivo->save($this->data))
 					} else {
-						$this->Session->setFlash('ERRO na transferência do arquivo '.$arquivo['name']);	
+						$this->Session->setFlash('ERRO na transferência do arquivo '.$arquivo['name'],'flash_bad');	
 					}//if(move_uploaded_file($arquivo['tmp_name'], $upload_file))
 				}//foreach($this->data['Publicacao']['arquivos'] as $arquivo)
-				$this->Session->setFlash(__('The publicacao has been saved', true));
+				$this->Session->setFlash(__('The publicacao has been saved', true),'flash_good');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The publicacao could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('The publicacao could not be saved. Please, try again.', true),'flash_bad');
 			}
 		}
 		$this->loadModel('TipoVeiculo');
@@ -166,10 +167,10 @@ class PublicacaosController extends AppController {
 		}
 		if (!empty($this->data)) {
 			if ($this->Publicacao->save($this->data)) {
-				$this->Session->setFlash(__('The publicacao has been saved', true));
+				$this->Session->setFlash(__('The publicacao has been saved', true),'flash_good');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The publicacao could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('The publicacao could not be saved. Please, try again.', true),'flash_bad');
 			}
 		}
 		if (empty($this->data)) {
@@ -181,7 +182,7 @@ class PublicacaosController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for publicacao', true));
+			$this->Session->setFlash(__('Invalid id for publicacao', true),'flash_bad');
 			$this->redirect(array('action'=>'index'));
 		}
 		$this->loadModel('Arquivo');
@@ -198,10 +199,10 @@ class PublicacaosController extends AppController {
 			}
 		}
 		if ($this->Publicacao->delete($id)) {
-			$this->Session->setFlash(__('Publicacao deleted', true));
+			$this->Session->setFlash(__('Publicacao deleted', true),'flash_good');
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Publicacao was not deleted', true));
+		$this->Session->setFlash(__('Publicacao was not deleted', true),'flash_bad');
 		$this->redirect(array('action' => 'index'));
 	}
 }

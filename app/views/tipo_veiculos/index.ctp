@@ -1,7 +1,7 @@
 <?php //phpinfo(); ?>
 <div class="tipoVeiculos index">
-	<h2><?php __('Tipo de Veiculos');?></h2>
-	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'tipo_veiculos','action' => 'add')); ?>">Novo Tipo de Veiculo</a>
+	<h2><?php __('Tipo de Veículos');?></h2>
+	<a class="button green" href="<?php echo $this->Html->url(array('controller' => 'tipo_veiculos','action' => 'add')); ?>">Novo Tipo de Veículo</a>
 	<?php echo $this->Form->create('TipoVeiculo',array('class' => 'pesquisa')); ?>
 	<fieldset>
 		<?php echo $this->Form->input('descricao',array('label' => 'Descrição')); 	?>
@@ -40,17 +40,16 @@
 	</tr>
 <?php endforeach; ?>
 	</table>
-	<p>
+	<div class="table-info">
 	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
-	));
-	?>	</p>
-
+		echo $this->Paginator->counter(array(
+		'format' => __('Exibindo %current% de %count% registros', true)
+		));
+	?>	
+	</div>
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
-	 | 	<?php echo $this->Paginator->numbers();?>
- |
-		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->prev($this->Html->image('back.png',array('alt' => 'Página anterior','title' => 'Página anterior')), array('escape' => false), null, array('class'=>'disabled','escape' => false));?>
+	 	<?php echo $this->Paginator->numbers();?>
+		<?php echo $this->Paginator->next($this->Html->image('next.png',array('alt' => 'Página seguinte','title' => 'Página seguinte')), array('escape' => false), null, array('class' => 'disabled','escape' => false));?>
 	</div>
 </div>

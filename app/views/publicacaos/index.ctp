@@ -16,11 +16,11 @@
 	</fieldset>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th style="width:43%;"><?php echo $this->Paginator->sort('titulo');?></th>
-			<th style="width:20%;"><?php echo $this->Paginator->sort('veiculo_id');?></th>
-			<th style="width:12%;"><?php echo $this->Paginator->sort('data_publicacao');?></th>
-			<th style="width:12%;"><?php echo $this->Paginator->sort('avaliacao');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th style="width:43%;"><?php echo $this->Paginator->sort(__('Título',true),'titulo');?></th>
+			<th style="width:20%;"><?php echo $this->Paginator->sort(__('Veículo',true),'veiculo_id');?></th>
+			<th style="width:12%;"><?php echo $this->Paginator->sort(__('Publicado em',true),'data_publicacao');?></th>
+			<th style="width:12%;"><?php echo $this->Paginator->sort(__('Avaliação',true),'avaliacao');?></th>
+			<th class="actions"><?php __('Ações');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -37,9 +37,9 @@
 		<td align="center">
 		<?php 
 		if($publicacao['Publicacao']['avaliacao'] == true) {
-			echo __('Positiva',true);
+			echo $this->Html->tag('span',__('Positiva',true),array('class' => 'span-detail green-opaque'));
 		} else {
-			echo __('Negativa',true);
+			echo $this->Html->tag('span',__('Negativa',true),array('class' => 'span-detail red'));
 		}
 		?>
 		&nbsp;
@@ -52,17 +52,16 @@
 	</tr>
 <?php endforeach; ?>
 	</table>
-	<p>
+	<div class="table-info">
 	<?php
 	echo $this->Paginator->counter(array(
-	'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
+	'format' => __('Exibindo %current% de %count% registros', true)
 	));
-	?>	</p>
-
+	?>	
+	</div>
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
-	 | 	<?php echo $this->Paginator->numbers();?>
- |
-		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->prev($this->Html->image('back.png',array('alt' => 'Página anterior','title' => 'Página anterior')), array('escape' => false), null, array('class'=>'disabled','escape' => false));?>
+	 	<?php echo $this->Paginator->numbers();?>
+		<?php echo $this->Paginator->next($this->Html->image('next.png',array('alt' => 'Página seguinte','title' => 'Página seguinte')), array('escape' => false), null, array('class' => 'disabled','escape' => false));?>
 	</div>
 </div>
