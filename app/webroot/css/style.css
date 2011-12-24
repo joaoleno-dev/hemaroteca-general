@@ -115,6 +115,7 @@ small {
 	width: 114px;
 }
 td.actions {
+	border: none;
 	padding-left: 20px;
 }
 table {
@@ -124,7 +125,8 @@ table {
 }
 table tr th {
 	background-color: #266CFF;
-	font: normal bold 14px Arial,Verdana,sans-serif;
+	border-left: 1px solid #AEC6FF;
+	font: bold 14px Arial,Verdana,sans-serif;
 	padding: 5px;
 }
 table th a,table th{
@@ -132,7 +134,8 @@ table th a,table th{
 	text-decoration: none;
 }
 td {
-	padding: 5px 5px;
+	border-right: 1px solid #AEC6FF;
+	padding: 5px;
 }
 .altrow {
 	/*background-color: #f2f6ff;*/
